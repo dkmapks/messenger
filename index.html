@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosty Messenger</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="messenger-container">
+        <div class="chat-header">
+            <div class="user-info">
+                <img src="default-avatar.png" alt="Avatar" class="avatar">
+                <span>Użytkownik</span>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Wiadomość...">
+            <button id="send-button">Wyślij</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
