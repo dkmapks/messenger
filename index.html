@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>DDrugs 2.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>DDrugs 2.0</h1>
+
+  <section id="stats">
+    <p>Zł: <span id="cash">1000</span></p>
+    <p>BTC: <span id="btc">0.000</span></p>
+    <p>Magazyn: <span id="storageUsed">0</span>/<span id="storageLimit">50</span>g</p>
+  </section>
+
+  <h2>Magazyn</h2>
+  <div id="warehouseOptions"></div>
+
+  <h2>Posiadane narkotyki</h2>
+  <div id="inventory"></div>
+
+  <h2>Ręczne kupowanie</h2>
+  <input id="buyDrug" placeholder="nazwa narkotyku">
+  <input id="buyAmount" type="number" placeholder="ilość">
+  <input id="buyPrice" type="number" placeholder="cena za gram/szt.">
+  <button onclick="manualBuy()">Kup</button>
+
+  <h2>Ręczna sprzedaż</h2>
+  <input id="sellDrug" placeholder="nazwa narkotyku">
+  <input id="sellAmount" type="number" placeholder="ilość">
+  <input id="sellPrice" type="number" placeholder="cena za gram/szt.">
+  <button onclick="manualSell()">Sprzedaj</button>
+
+  <h2>Oferty dostawców</h2>
+  <div id="supplierOffers"></div>
+
+  <h2>Klienci</h2>
+  <div id="clients"></div>
+
+  <h2>BTC</h2>
+  <input type="number" id="btcAmount" placeholder="Kwota BTC">
+  <button onclick="btc.deposit()">Wpłać</button>
+  <button onclick="btc.withdraw()">Wypłać</button>
+
+  <h2>Darknet</h2>
+  <div id="darknetOffers"></div>
+
+  <h2>Pracownicy</h2>
+  <select id="workerName"></select>
+  <input id="workerDrug" placeholder="narkotyk">
+  <input type="number" id="workerAmount" placeholder="ilość">
+  <input type="number" id="workerPrice" placeholder="cena za gram">
+  <button onclick="assignToWorker()">Daj towar</button>
+  <div id="workersList"></div>
+
+  <h2>Podróże</h2>
+  <div id="travel"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
