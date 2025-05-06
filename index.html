@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosty Messenger</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8" />
+  <title>DDrugs 2.0</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="messenger-container">
-        <div class="chat-header">
-            <div class="user-info">
-                <img src="default-avatar.png" alt="Avatar" class="avatar">
-                <span>Użytkownik</span>
-            </div>
-        </div>
-        <div class="chat-body" id="chat-body">
-            </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Wiadomość...">
-            <button id="send-button">Wyślij</button>
-        </div>
-    </div>
+  <h1>DDrugs 2.0</h1>
 
-    <script src="script.js"></script>
+  <div id="stats">
+    <p>💰 Gotówka: <span id="cash">0</span> zł</p>
+    <p>🧪 Narkotyki: <span id="drugs">0</span> g</p>
+    <p>🧑‍💼 Pracownicy: <span id="workers">0</span></p>
+    <p>🏦 Bank: <span id="bank">0</span> zł</p>
+    <p>📈 Reputacja: <span id="reputation">0</span></p>
+  </div>
+
+  <div id="actions">
+    <button onclick="buyDrugs()">Kup narkotyki</button>
+    <button onclick="sellDrugs()">Sprzedaj narkotyki</button>
+    <button onclick="hireWorker()">Zatrudnij pracownika</button>
+    <button onclick="openBank()">Bank</button>
+    <button onclick="openModMenu()">Mod Menu</button>
+  </div>
+
+  <div id="modMenu" style="display:none;">
+    <h2>Mod Menu</h2>
+    <input type="text" id="modCode" placeholder="Wprowadź kod" />
+    <button onclick="activateMod()">Aktywuj</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
