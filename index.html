@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Druglord Tycoon</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <h1>Druglord Tycoon</h1>
   <div id="game-container">
+    <!-- Interfejs gry -->
     <div id="status">
       <p>Gotówka: $<span id="cash">1000</span></p>
       <p>BTC: <span id="btc">0.00</span></p>
@@ -23,40 +25,6 @@
       <button onclick="viewInventory()">Ekwipunek</button>
       <button onclick="saveGame()">Zapisz grę</button>
       <button onclick="loadGame()">Wczytaj grę</button>
-    </div>
-
-    <div id="mod-menu" style="display:none;">
-      <h2>Mod Menu</h2>
-      <button onclick="addMoney()">Dodaj $10,000</button>
-      <button onclick="disablePolice()">Wyłącz policję</button>
-      <button onclick="maxDrugPrices()">Ceny maksymalne</button>
-      <button onclick="resetGame()">Reset gry</button>
-      <button onclick="addBTC()">Dodaj 1 BTC</button>
-      <button onclick="godMode()">Tryb nieśmiertelny</button>
-      <button onclick="teleport()">Przenieś do miasta</button>
-      <button onclick="unlockProperties()">Odblokuj nieruchomości</button>
-      <button onclick="debugEvents()">Wydarzenia debugowe</button>
-      <button onclick="showGodUI()">God Mode UI</button>
-    </div>
-
-    <input type="password" id="mod-code" placeholder="Wpisz kod" />
-    <button onclick="checkModCode()">Aktywuj Mod Menu</button>
-  </div>
-
-  <div id="phone-icon" onclick="togglePhone()">📱</div>
-
-  <div id="phone-interface" style="display:none;">
-    <div class="app-icon" onclick="openApp('crypto')">CryptoExchange</div>
-    <div class="app-icon" onclick="openApp('missions')">Zlecenia</div>
-    <div class="app-icon" onclick="openApp('storage')">Magazyn</div>
-    <div class="app-icon" onclick="openApp('lab')">Laboratorium</div>
-    <div class="app-icon" onclick="openApp('contacts')">Kontakty</div>
-    <div class="app-icon" onclick="openApp('blackmarket')">Czarny Rynek</div>
-    <div class="app-icon" onclick="openApp('bank')">Bank</div>
-    <div class="app-icon" onclick="openApp('profile')">Profil</div>
-
-    <div id="phone-app-screen" style="margin-top:10px; background:#111; padding:10px; border:1px solid #0f0; border-radius:5px;">
-      <p>Wybierz aplikację</p>
     </div>
   </div>
 
