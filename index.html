@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>DDrugs 2.0</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: monospace;
+      padding: 20px;
+    }
+    input, button, select {
+      margin: 5px;
+      padding: 5px;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    h1, h2 {
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>DDrugs 2.0</h1>
+  <p>Gotówka: <span id="cash">0</span> zł</p>
+  <p>BTC: <span id="btc">0</span></p>
+  <p>Magazyn: <span id="storageUsed">0</span>/<span id="storageLimit">0</span> g</p>
+
+  <h2>Inwentarz</h2>
+  <div id="inventory"></div>
+
+  <h2>Ulepszenia magazynu</h2>
+  <div id="warehouseOptions"></div>
+
+  <h2>Zakup ręczny</h2>
+  <select id="buyDrug">
+    <option value="kokaina">Kokaina</option>
+    <option value="marihuana">Marihuana</option>
+    <option value="mefedron">Mefedron</option>
+    <option value="amfetamina">Amfetamina</option>
+    <option value="pixy">Pixy</option>
+  </select>
+  Ilość: <input type="number" id="buyAmount" value="1" min="1">
+  Cena: <input type="number" id="buyPrice" value="100" min="1">
+  <button onclick="manualBuy()">Kup</button>
+
+  <h2>Sprzedaż ręczna</h2>
+  <select id="sellDrug">
+    <option value="kokaina">Kokaina</option>
+    <option value="marihuana">Marihuana</option>
+    <option value="mefedron">Mefedron</option>
+    <option value="amfetamina">Amfetamina</option>
+    <option value="pixy">Pixy</option>
+  </select>
+  Ilość: <input type="number" id="sellAmount" value="1" min="1">
+  Cena: <input type="number" id="sellPrice" value="200" min="1">
+  <button onclick="manualSell()">Sprzedaj</button>
+
+  <h2>Oferty dostawców (Darknet)</h2>
+  <div id="supplierOffers"></div>
+
+  <h2>Klienci</h2>
+  <div id="clients"></div>
+
+  <h2>Pracownicy</h2>
+  <select id="workerName"></select>
+  <select id="workerDrug">
+    <option value="kokaina">Kokaina</option>
+    <option value="marihuana">Marihuana</option>
+    <option value="mefedron">Mefedron</option>
+    <option value="amfetamina">Amfetamina</option>
+    <option value="pixy">Pixy</option>
+  </select>
+  Ilość: <input type="number" id="workerAmount" value="1" min="1">
+  Cena: <input type="number" id="workerPrice" value="200" min="1">
+  <button onclick="assignToWorker()">Wysyłaj</button>
+  <div id="workersList"></div>
+
+  <h2>Podróże</h2>
+  <div id="travel"></div>
+
+  <h2>BTC (1 BTC = 50 000 zł)</h2>
+  Ilość BTC: <input type="number" id="btcAmount" step="0.001" value="0.01" min="0.001">
+  <button onclick="btc.deposit()">Kup BTC</button>
+  <button onclick="btc.withdraw()">Sprzedaj BTC</button>
+
+  <h2>DarkWallet (Ukryty portfel BTC)</h2>
+  <button onclick="darkWalletApi.deposit(parseFloat(prompt('Ile BTC wpłacić?')))">Wpłać BTC</button>
+  <button onclick="darkWalletApi.withdraw(parseFloat(prompt('Ile BTC wypłacić?')))">Wypłać BTC</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
