@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+#stats p {
+  margin: 5px 0;
+}
+
+#actions button {
+  margin: 5px;
+  padding: 10px;
+}
+
+#modMenu {
+  margin-top: 20px;
+}
