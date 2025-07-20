@@ -1,62 +1,39 @@
-let day = 1;
-let money = 1000;
-let stock = 0;
-const buyPrices = {
-  10: 40,
-  20: 35,
-  50: 30,
-  100: 25,
-  200: 20
-};
+// Falling hearts
+const heartsContainer = document.querySelector('.hearts');
 
-function buyDrugs() {
-  let amount = prompt("Ile gram chcesz kupić? (10, 20, 50, 100, 200)");
-  amount = parseInt(amount);
-  if (!buyPrices[amount]) return alert("Nieprawidłowa ilość!");
-  let cost = amount * buyPrices[amount];
-  if (money >= cost) {
-    money -= cost;
-    stock += amount;
-    log(`Zakupiono ${amount}g po ${buyPrices[amount]} zł/g = ${cost} zł`);
-    updateUI();
-  } else {
-    alert("Nie masz tyle kasy!");
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.textContent = '💖';
+  heart.style.position = 'absolute';
+  heart.style.left = `${Math.random() * 100}%`;
+  heart.style.top = '-50px';
+  heart.style.fontSize = `${Math.random() * 25 + 15}px`;
+  heart.style.opacity = Math.random();
+  heart.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+
+  heartsContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heartsContainer.removeChild(heart);
+  }, 5000);
+}
+
+setInterval(createHeart, 250);
+
+// Keyframes (in JS)
+const style = document.createElement('style');
+style.textContent = `
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
   }
 }
+`;
+document.head.appendChild(style);
 
-function nextDay() {
-  day++;
-  const clients = Math.floor(Math.random() * 21) + 20; // 20–40
-  let sold = Math.min(clients, stock);
-  let earned = sold * 50;
-  money += earned;
-  stock -= sold;
-
-  const places = ["Park Solidarności", "Promenada nad Jeziorem", "ul. Wojska Polskiego", "Os. Jeziorna", "Plaża miejska", "Dworzec PKP", "Ełcka Kolejka Wąskotorowa"];
-  const place = places[Math.floor(Math.random() * places.length)];
-
-  log(`Dzień ${day}: sprzedano ${sold}g za ${earned} zł (${clients} klientów) na ${place}`);
-
-  if (stock < 20) {
-    log(`Masz mało towaru (${stock}g)! Kliknij prawym przyciskiem myszy i wybierz „Kup towar”`);
-  }
-
-  updateUI();
-}
-
-function updateUI() {
-  document.getElementById("day").textContent = day;
-  document.getElementById("money").textContent = money;
-  document.getElementById("stock").textContent = stock;
-}
-
-function log(text) {
-  const logBox = document.getElementById("log");
-  logBox.innerHTML = `<div>> ${text}</div>` + logBox.innerHTML;
-}
-
-// Kupno towaru – shortcut prawym przyciskiem
-window.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-  buyDrugs();
+// Autoplay fix for music
+window.addEventListener('click', () => {
+  const audio = document.getElementById('loveMusic');
+  audio.play().catch(() => {});
 });
