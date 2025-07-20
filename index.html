@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diler Tycoon</title>
+  <title>Amelia ❤️ Dominik</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Diler Tycoon</h1>
-    <p>Dzień: <span id="day">1</span></p>
-    <p>Gotówka: <span id="money">1000</span> zł</p>
-    <p>Posiadany towar: <span id="stock">0</span> g</p>
-    <p>Cena sprzedaży: 50 zł / 1g</p>
-    <button onclick="nextDay()">Sprzedaj kolejny dzień</button>
-    <div id="log"></div>
+  <video autoplay loop muted playsinline id="bgVideo">
+    <source src="https://cdn.pixabay.com/video/2023/02/08/150283-797763383_large.mp4" type="video/mp4" />
+  </video>
+
+  <audio autoplay loop id="loveMusic">
+    <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_b4f39f4e0f.mp3" type="audio/mp3" />
+  </audio>
+
+  <div class="overlay"></div>
+  <div class="hearts"></div>
+
+  <div class="content">
+    <h1>Amelia ❤️ Dominik</h1>
+    <p class="glow">Na zawsze razem. Dwie dusze, jedno serce.</p>
+    <p class="typewriter">Kocham Cię najmocniej na świecie...</p>
+    <img src="https://i.imgur.com/ax0NCsK.png" alt="Serce" class="love-img" />
   </div>
-  <script src="game.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
