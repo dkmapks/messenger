@@ -1,19 +1,14 @@
 {
-  "name": "Test DDrugs",
-  "short_name": "DDrugs Test",
+  "name": "Amelia & Dominik",
+  "short_name": "333",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#f0f2f5",
-  "theme_color": "#007bff",
+  "background_color": "#000000",
+  "theme_color": "#ff0080",
   "icons": [
     {
-      "src": "IMG_4233.png",
+      "src": "https://i.imgur.com/ax0NCsK.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "IMG_4233.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
